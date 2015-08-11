@@ -12,6 +12,7 @@
         function renderMessage(msg) {
           msg = JSON.parse(msg);
           messages.push(msg);
+          riot.update();
           return;
         }
 
@@ -40,7 +41,8 @@
             data.map(function(msg){
                 renderMessage(msg);
             })
-                scrollToBottom();
+            scrollToBottom();
+            riot.mount("message", {messages: messages});
           })
         }
 

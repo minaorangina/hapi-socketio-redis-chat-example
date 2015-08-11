@@ -7,14 +7,7 @@
 
     <script>
 
-        this.arr = [{m: "m", t: "t", n: "n"}];
-
-        setTimeout(function(){
-            this.arr.concat(opts.messages);
-            this.update();
-            console.log(this);
-        }.bind(this), 1000);
-
+        this.arr = opts.messages;
 
         leadZero(number) {
             return (number < 10) ? '0'+number : number;
